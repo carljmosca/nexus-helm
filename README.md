@@ -1,5 +1,7 @@
 # Sonatype Nexus Helm Chart
 
+The Nexus repository from Sonatype can easily be run via Docker for various use case. This Helm chart leverages the Sonatype container image. It is not production-use ready but it is a start and provides an example of a quick way to have a TLS connection using a [Let's Encrypt](https://letsencrypt.org/) certificate thanks to the work of folks at [Tailscale](https://tailscale.com).
+
 ## These instructions assume access to Helm and an available Kubernetes cluster that has the Nginx ingress installed.
 
 TODO: add Kubernetes and Nginx ingress installation instructions.
