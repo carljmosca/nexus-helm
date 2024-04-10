@@ -4,7 +4,13 @@ The Nexus repository from Sonatype can easily be run via Docker for various use 
 
 ## These instructions assume access to Helm and an available Kubernetes cluster that has the Nginx ingress installed.
 
-TODO: add Kubernetes and Nginx ingress installation instructions.
+TODO: add Kubernetes installation instructions.
+
+### Install Nginx ingress (if not already installed)
+
+```
+helm install ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-nginx --create-namespace --version 4.2.5
+```
 
 ### Tailscale (using DNS and HTTPS certificate)
 
@@ -17,6 +23,7 @@ The Tailscale network device name from above should be used for the TAILSCALE_HO
 ```
 export TAILSCALE_HOSTNAME=some.host.ts.net
 export TAILSCALE_CERTIFICATE_DIRECTORY=$HOME/Library/Containers/io.tailscale.ipn.macos/Data
+kubectl create namespace nexus
 /Applications/Tailscale.app/Contents/MacOS/Tailscale cert $TAILSCALE_HOSTNAME
 kubectl create secret tls nexus-tls-secret \
     --cert=$TAILSCALE_CERTIFICATE_DIRECTORY/$TAILSCALE_HOSTNAME.crt \
