@@ -1,0 +1,15 @@
+{{- if .Values.global.usePVC }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nexus-pv-claim
+spec:
+  storageClassName: {{ .Values.global.storageClass }}
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: {{ .Values.global.storage }}
+{{- end }}
