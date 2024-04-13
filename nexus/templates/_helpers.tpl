@@ -65,11 +65,9 @@ Create the name of the service account to use
 Volume mounts
 */}}
 {{- define "nexus.volumeMounts" -}}
-{{- if .Values.global.nexusDataDirectory }}
 volumeMounts:
   - mountPath: /nexus-data
     name: nexus-data
-{{- end }}
 {{- end -}}
 
 {{/*
