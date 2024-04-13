@@ -44,8 +44,7 @@ TODO: Linux instructions
 To install or upgrade Nexus via Helm use the following command replacing the value for the global.nexusDataDirectory if/as desired:
 
 ```
- helm upgrade -f values.yaml --set global.nexusDataDirectory=$HOME/data/nexus \
-    --install nexus nexus --namespace=nexus --create-namespace
+ helm upgrade -f values.yaml --install nexus nexus --namespace=nexus --create-namespace
 ```
 
 After a couple of minutes, once the application is fully deployed (upon initial installation), a file named "admin.password" should be created in the directory specified for global.nexusDataDirectory. This value should be used to login as the admin user.

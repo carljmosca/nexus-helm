@@ -76,9 +76,12 @@ volumeMounts:
 Volumes
 */}}
 {{- define "nexus.volumes" -}}
-{{- if .Values.global.nexusDataDirectory }}
 volumes:  
   - name: nexus-data
+{{- if .Values.global.usePVC }}
+    persistentVolumeClaim:
+      claimName: nexus-pv-claim 
+{{- else }}
     hostPath:
       path: {{ .Values.global.nexusDataDirectory }}
       type: DirectoryOrCreate
