@@ -4,8 +4,6 @@ The Nexus repository from Sonatype can easily be run via Docker for various use 
 
 ## These instructions assume access to Helm and an available Kubernetes cluster that has the Nginx ingress installed.
 
-TODO: add Kubernetes installation instructions.
-
 ### Install Nginx ingress (if not already installed)
 
 ```
